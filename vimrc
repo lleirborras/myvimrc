@@ -29,6 +29,8 @@ Plugin 'w0ng/vim-hybrid'
 Plugin 'tpope/vim-haml'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,6 +54,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set nocursorline
 
 " No backup
 set nobackup
@@ -59,7 +62,7 @@ set nowritebackup
 
 " Tab completion options
 set wildmode=list:longest,list:full
-set wildignorecase
+"set wildignorecase
 set complete=.,w,t
 set wildmenu
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,test/fixtures/*,vendor/gems/*
@@ -111,5 +114,8 @@ set mouse=a
 " Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
 set ttymouse=xterm2
 
+let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=1
 map <C-n> :NERDTreeToggle<CR>
 
+set history=1000
