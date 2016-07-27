@@ -10,6 +10,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " My plugins
 Plugin 'tpope/vim-rails'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-bundler'
 Plugin 'scrooloose/nerdtree'
@@ -19,7 +21,6 @@ Plugin 'ervandew/supertab'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-unimpaired'
@@ -36,7 +37,7 @@ Plugin 'kien/ctrlp.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-filetype plugin on
+"filetype plugin on
 
 syntax on
 
@@ -62,13 +63,8 @@ set nowritebackup
 
 " Tab completion options
 set wildmode=list:longest,list:full
-if has("unix")
-  let s:uname = system("uname -s")
-  if s:uname == "Darwin"
-    " Do Mac stuff here
-  else
-    set wildignorecase
-  endif
+if system("uname") == "Linux"
+  set wildignorecase
 endif
 set complete=.,w,t
 set wildmenu
@@ -126,3 +122,8 @@ let NERDTreeQuitOnOpen=1
 map <C-n> :NERDTreeToggle<CR>
 
 set history=1000
+
+
+set autoindent
+set smartindent
+
