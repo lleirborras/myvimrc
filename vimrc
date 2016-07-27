@@ -62,7 +62,14 @@ set nowritebackup
 
 " Tab completion options
 set wildmode=list:longest,list:full
-"set wildignorecase
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    " Do Mac stuff here
+  else
+    set wildignorecase
+  endif
+endif
 set complete=.,w,t
 set wildmenu
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,test/fixtures/*,vendor/gems/*
