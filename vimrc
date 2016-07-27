@@ -28,7 +28,7 @@ Plugin 'elzr/vim-json'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'tpope/vim-haml'
 Plugin 'elixir-lang/vim-elixir'
-
+Plugin 'bling/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -38,8 +38,8 @@ filetype plugin on
 
 syntax on
 
-:let mapleader=","
-:imap jj <Esc>
+let mapleader=","
+imap jj <Esc>
 
 set number
 set ruler
@@ -59,6 +59,7 @@ set nowritebackup
 
 " Tab completion options
 set wildmode=list:longest,list:full
+set wildignorecase
 set complete=.,w,t
 set wildmenu
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,test/fixtures/*,vendor/gems/*
@@ -109,4 +110,6 @@ set mouse=a
 " Set this to the name of your terminal that supports mouse codes.
 " Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
 set ttymouse=xterm2
+
+map <C-n> :NERDTreeToggle<CR>
 
